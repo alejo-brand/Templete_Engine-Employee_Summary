@@ -9,8 +9,89 @@ const OUTPUT_DIR = path.resolve(__dirname, "output");
 const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./lib/htmlRenderer");
+const employeeList = [];
 
+//Ask for manager Info
+function askUserForManagerInfo (){
+    return inquirer.prompt([
+        {
+            message:"What is the manager's name",
+            name:"managerName",
+            type:"input",
+        },
+        {
+            message:"What is the manager's id number",
+            name:"managerId",
+            type:"input",
+        },
+        {
+            message:"What is the manager's email address",
+            name:"managerEmail",
+            type:"input",
+        },
+        {
+            message:"What is the manager's office number",
+            name:"officeNumber",
+            type:"input",
+        }
 
+    ]).then((managerData)=>{
+        const newManager = new Manager (managerData.name,managerData.id,managerData.email,managerData.officeNumber);
+        employeeList.push(newManager);
+    })
+}
+//ask user for which employee type (options are: Engineer,intern, I don't want to add an more team members)
+function askUserForEmployeeInfo (){
+    return inquirer.prompt([
+        {
+            message:"What is the Employee's name",
+            name:"employeeName",
+            type:"input",
+        },
+        {
+            message:"What is the employee's id number",
+            name:"employeeId",
+            type:"input",
+        },
+        {
+            message:"What is the employee's email",
+            name:"employeeEmail",
+            type:"input",
+        }
+    ]).then((managerData)=>{
+        const newManager = new Manager (managerData.name,managerData.id,managerData.email,managerData.officeNumber);
+        employeeList.push(newManager);
+    })
+}
+
+// after the user chooses an option, for example: the user chose Engineer, then:
+
+// Ask for engineer info
+function askUserForEngineerInfo (){
+    return inquirer.prompt([
+        {
+            message:"What is the name of the Engineer",
+            name:"engineerName",
+            type:"input",
+        }
+    ]).then((managerData)=>{
+        const newManager = new Manager (managerData.name,managerData.id,managerData.email,managerData.officeNumber);
+        employeeList.push(newManager);
+    })
+}
+// Ask the user for intern info 
+function askUserForInternInfo (){
+    return inquirer.prompt([
+        {
+            message:"What is the name of the intern",
+            name:"internName",
+            type:"input",
+        }
+    ]).then((managerData)=>{
+        const newManager = new Manager (managerData.name,managerData.id,managerData.email,managerData.officeNumber);
+        employeeList.push(newManager);
+    })
+}
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
 
