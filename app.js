@@ -38,28 +38,26 @@ function askUserForManagerInfo (){
     ]).then((managerData)=>{
         const newManager = new Manager (managerData.name,managerData.id,managerData.email,managerData.officeNumber);
         employeeList.push(newManager);
+        askUserForEmployeeType();
     })
 }
 //ask user for which employee type (options are: Engineer,intern, I don't want to add an more team members)
-function askUserForEmployeeInfo (){
+function askUserForEmployeeType (){
     return inquirer.prompt([
         {
-            message:"What is the Employee's name",
-            name:"employeeName",
-            type:"input",
+            message:"What type of employee do you wish to add",
+            name:"employeeType",
+            type:"list",
+            choices:["Engineer","Intern"]
         },
-        {
-            message:"What is the employee's id number",
-            name:"employeeId",
-            type:"input",
-        },
-        {
-            message:"What is the employee's email",
-            name:"employeeEmail",
-            type:"input",
+        
+    ]).then((newEmployeeData)=>{
+        //If Engineer is selected
+        if (newEmployeeData === "Engineer"){
+            askUserForEngineerInfo()
+        } else {
+            askUserForInternInfo();
         }
-    ]).then((managerData)=>{
-        const newManager = new Manager (managerData.name,managerData.id,managerData.email,managerData.officeNumber);
         employeeList.push(newManager);
     })
 }
