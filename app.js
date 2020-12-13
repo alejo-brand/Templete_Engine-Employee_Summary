@@ -58,7 +58,7 @@ function askUserForEmployeeType (){
         } else if(newEmployeeData === "Intern"){
             askUserForInternInfo();
         }else{
-            const htmlPage = render (employeeList)
+            createHtml();
         }
         // employeeList.push(newEmp);
     })
@@ -104,13 +104,14 @@ function askUserForInternInfo (){
             type:"input",
         },
         {
-            message:"What is the name of the Intern",
-            name:"internName",
+            
+            message:"What is the intern id number",
+            name:"internId",
             type:"input",
         },
         {
-            message:"What is the intern id number",
-            name:"internId",
+            message:"What is the intern email address",
+            name:"internEmail",
             type:"input",
         },
         {
@@ -121,9 +122,19 @@ function askUserForInternInfo (){
 
     ]).then((managerData)=>{
         const newIntern = new Intern (newIntern.name,newIntern.id,newIntern.email,newIntern.schoolName);
-        employeeList.push(newManager);
+        employeeList.push(newIntern);
+    })
+};
+
+function createHtml (){
+    const htmlPage = render (employeeList);
+    fs.writeFile('output.html',htmlContent,(err)=>{
+        err?
+        console.log('FAILED TO WRITE FILE'):
+        console.log('THE FILE HAS BEEN CREATED')
     })
 }
+
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
 
