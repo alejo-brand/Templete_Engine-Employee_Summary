@@ -91,7 +91,7 @@ function askUserForEngineerInfo (){
         }
 
     ]).then((engineerData)=>{
-        const newEngineer = new Engineer (newEngineer.name,newEngineer.id,newEngineer.email,newEngineer.githubUserName);
+        const newEngineer = new Engineer (engineerData.name, engineerData.id, engineerData.email, engineerData.githubUserName);
         employeeList.push(newEngineer);
     })
 }
@@ -120,8 +120,8 @@ function askUserForInternInfo (){
             type:"input",
         }
 
-    ]).then((managerData)=>{
-        const newIntern = new Intern (newIntern.name,newIntern.id,newIntern.email,newIntern.schoolName);
+    ]).then((internData)=>{
+        const newIntern = new Intern (internData.name, internData.id, internData.email, internData.school);
         employeeList.push(newIntern);
     })
 };
