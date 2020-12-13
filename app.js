@@ -16,17 +16,17 @@ function askUserForManagerInfo (){
     return inquirer.prompt([
         {
             message:"What is the manager's name",
-            name:"managerName",
+            name:"name",
             type:"input",
         },
         {
             message:"What is the manager's id number",
-            name:"managerId",
+            name:"id",
             type:"input",
         },
         {
             message:"What is the manager's email address",
-            name:"managerEmail",
+            name:"email",
             type:"input",
         },
         {
@@ -71,22 +71,22 @@ function askUserForEngineerInfo (){
     return inquirer.prompt([
         {
             message:"What is the name of the Engineer",
-            name:"engineerName",
+            name:"name",
             type:"input",
         },
         {
             message:"What is the engineer's id number",
-            name:"engineerId",
+            name:"id",
             type:"input",
         },
         {
             message:"What is the engieneer email address",
-            name:"engineerEmail",
+            name:"email",
             type:"input",
         },
         {
             message:"What is the engineer gitHub username",
-            name:"githubUserName",
+            name:"gitHub",
             type:"input",
         }
 
@@ -100,23 +100,23 @@ function askUserForInternInfo (){
     return inquirer.prompt([
         {
             message:"What is the name of the intern",
-            name:"internName",
+            name:"name",
             type:"input",
         },
         {
             
             message:"What is the intern id number",
-            name:"internId",
+            name:"id",
             type:"input",
         },
         {
             message:"What is the intern email address",
-            name:"internEmail",
+            name:"email",
             type:"input",
         },
         {
             message:"What is the intern School Name",
-            name:"schoolName",
+            name:"school",
             type:"input",
         }
 
