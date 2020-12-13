@@ -48,7 +48,7 @@ function askUserForEmployeeType (){
             message:"What type of employee do you wish to add",
             name:"employeeType",
             type:"list",
-            choices:[{name:"Engineer",value = 0},{name:"Intern",value = 1},{name:"I don't want to add any more members to the team",value = 2}]
+            choices:[{name:"Engineer", value: 0}, {name:"Intern", value: 1}, {name:"I don't want to add any more members to the team", value: 2}],
         },
         
     ]).then((newEmployeeData)=>{
@@ -128,13 +128,13 @@ function askUserForInternInfo (){
 
 function createHtml (){
     const htmlPage = render (employeeList);
-    fs.writeFile('output.html',htmlContent,(err)=>{
+    fs.writeFile('output.html',htmlPage,(err)=>{
         err?
         console.log('FAILED TO WRITE FILE'):
         console.log('THE FILE HAS BEEN CREATED')
     })
 }
-
+askUserForManagerInfo();
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
 
