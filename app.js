@@ -48,17 +48,19 @@ function askUserForEmployeeType (){
             message:"What type of employee do you wish to add",
             name:"employeeType",
             type:"list",
-            choices:["Engineer","Intern"]
+            choices:["Engineer","Intern","I don't want to add any more members"]
         },
         
     ]).then((newEmployeeData)=>{
         //If Engineer is selected
         if (newEmployeeData === "Engineer"){
             askUserForEngineerInfo()
-        } else {
+        } else if(newEmployeeData === "Intern"){
             askUserForInternInfo();
+        }else{
+            const htmlPage = render (employeeList)
         }
-        employeeList.push(newManager);
+        // employeeList.push(newEmp);
     })
 }
 
@@ -71,10 +73,26 @@ function askUserForEngineerInfo (){
             message:"What is the name of the Engineer",
             name:"engineerName",
             type:"input",
+        },
+        {
+            message:"What is the engineer's id number",
+            name:"engineerId",
+            type:"input",
+        },
+        {
+            message:"What is the engieneer email address",
+            name:"engineerEmail",
+            type:"input",
+        },
+        {
+            message:"What is the engineer gitHub username",
+            name:"githubUserName",
+            type:"input",
         }
-    ]).then((managerData)=>{
-        const newManager = new Manager (managerData.name,managerData.id,managerData.email,managerData.officeNumber);
-        employeeList.push(newManager);
+
+    ]).then((engineerData)=>{
+        const newEngineer = new Engineer (newEngineer.name,newEngineer.id,newEngineer.email,newEngineer.githubUserName);
+        employeeList.push(newEngineer);
     })
 }
 // Ask the user for intern info 
@@ -84,9 +102,25 @@ function askUserForInternInfo (){
             message:"What is the name of the intern",
             name:"internName",
             type:"input",
+        },
+        {
+            message:"What is the name of the Intern",
+            name:"internName",
+            type:"input",
+        },
+        {
+            message:"What is the intern id number",
+            name:"internId",
+            type:"input",
+        },
+        {
+            message:"What is the intern School Name",
+            name:"schoolName",
+            type:"input",
         }
+
     ]).then((managerData)=>{
-        const newManager = new Manager (managerData.name,managerData.id,managerData.email,managerData.officeNumber);
+        const newIntern = new Intern (newIntern.name,newIntern.id,newIntern.email,newIntern.schoolName);
         employeeList.push(newManager);
     })
 }
