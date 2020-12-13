@@ -48,14 +48,14 @@ function askUserForEmployeeType (){
             message:"What type of employee do you wish to add",
             name:"employeeType",
             type:"list",
-            choices:["Engineer","Intern","I don't want to add any more members"]
+            choices:[{name:"Engineer",value = 0},{name:"Intern",value = 1},{name:"I don't want to add any more members to the team",value = 2}]
         },
         
     ]).then((newEmployeeData)=>{
         //If Engineer is selected
-        if (newEmployeeData === "Engineer"){
+        if (newEmployeeData.employeeType === 0){
             askUserForEngineerInfo()
-        } else if(newEmployeeData === "Intern"){
+        } else if(newEmployeeData.employeeType === 1){
             askUserForInternInfo();
         }else{
             createHtml();
