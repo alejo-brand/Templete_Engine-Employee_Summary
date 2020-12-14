@@ -16,5 +16,4 @@ This app was created in order to help the management of work teams by adding the
 * [Email:](alejandrobrand8@gmail.com)
 
 ## gitHub Repository link
-     
-    * https://github.com/alejo-brand/Templete_Engine-Employee_Summary
+*[GitHub Repo](https://github.com/alejo-brand/Templete_Engine-Employee_Summary)
