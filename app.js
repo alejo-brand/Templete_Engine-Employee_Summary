@@ -9,6 +9,7 @@ const OUTPUT_DIR = path.resolve(__dirname, "output");
 const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./lib/htmlRenderer");
+//Set up an empty array to collect all the employees added by the user to later render the html with this information 
 const employeeList = [];
 
 //Ask for manager Info
