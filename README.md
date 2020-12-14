@@ -12,8 +12,8 @@ This app was created in order to help the management of work teams by adding the
 
 ## Developer Info for questions or requests
 
-    * GitHub user name :https://github.com/alejo-brand
-    * Email: alejandrobrand8@gmail.com
+    * [GitHub user name:](https://github.com/alejo-brand)
+    * [Email:](alejandrobrand8@gmail.com)
 
 ## gitHub Repository link
      
